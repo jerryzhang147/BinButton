@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "FreeToFitViewController.h"
+#import "FitToFreeViewController.h"
 
 @interface ViewController ()
 
@@ -16,13 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
+- (IBAction)freeToFitAction:(id)sender {
+    [self presentViewController:[FreeToFitViewController new] animated:YES completion:nil];
+}
+
+- (IBAction)fitToFreeAction:(id)sender {
+    [self presentViewController:[FitToFreeViewController new] animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
