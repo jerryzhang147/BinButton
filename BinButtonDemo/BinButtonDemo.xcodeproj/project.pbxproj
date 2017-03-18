@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA25F3641E7D361500EB0D2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F3631E7D361500EB0D2F /* main.m */; };
+		FA25F3671E7D361500EB0D2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F3661E7D361500EB0D2F /* AppDelegate.m */; };
+		FA25F36A1E7D361500EB0D2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F3691E7D361500EB0D2F /* ViewController.m */; };
+		FA25F36D1E7D361500EB0D2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA25F36B1E7D361500EB0D2F /* Main.storyboard */; };
+		FA25F36F1E7D361600EB0D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA25F36E1E7D361600EB0D2F /* Assets.xcassets */; };
+		FA25F3721E7D361600EB0D2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA25F3701E7D361600EB0D2F /* LaunchScreen.storyboard */; };
+		FA25F37D1E7D361600EB0D2F /* BinButtonDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F37C1E7D361600EB0D2F /* BinButtonDemoUITests.m */; };
+		FA25F3971E7D7F7800EB0D2F /* BinButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F3951E7D7F7800EB0D2F /* BinButton.m */; };
+		FA25F3981E7D7F7800EB0D2F /* BinButtonDefaultImageName@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25F3961E7D7F7800EB0D2F /* BinButtonDefaultImageName@2x.png */; };
+		FA25F39B1E7D852E00EB0D2F /* FreeToFitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F39A1E7D852E00EB0D2F /* FreeToFitViewController.m */; };
+		FA25F39E1E7D853F00EB0D2F /* FitToFreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25F39D1E7D853F00EB0D2F /* FitToFreeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA25F3791E7D361600EB0D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA25F3571E7D361500EB0D2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA25F35E1E7D361500EB0D2F;
+			remoteInfo = BinButtonDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA25F35F1E7D361500EB0D2F /* BinButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA25F3631E7D361500EB0D2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA25F3651E7D361500EB0D2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA25F3661E7D361500EB0D2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FA25F3681E7D361500EB0D2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FA25F3691E7D361500EB0D2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FA25F36C1E7D361500EB0D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA25F36E1E7D361600EB0D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA25F3711E7D361600EB0D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA25F3731E7D361600EB0D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA25F3781E7D361600EB0D2F /* BinButtonDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinButtonDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA25F37C1E7D361600EB0D2F /* BinButtonDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinButtonDemoUITests.m; sourceTree = "<group>"; };
+		FA25F37E1E7D361600EB0D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA25F3941E7D7F7800EB0D2F /* BinButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinButton.h; sourceTree = "<group>"; };
+		FA25F3951E7D7F7800EB0D2F /* BinButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinButton.m; sourceTree = "<group>"; };
+		FA25F3961E7D7F7800EB0D2F /* BinButtonDefaultImageName@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BinButtonDefaultImageName@2x.png"; sourceTree = "<group>"; };
+		FA25F3991E7D852E00EB0D2F /* FreeToFitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeToFitViewController.h; sourceTree = "<group>"; };
+		FA25F39A1E7D852E00EB0D2F /* FreeToFitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeToFitViewController.m; sourceTree = "<group>"; };
+		FA25F39C1E7D853F00EB0D2F /* FitToFreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FitToFreeViewController.h; sourceTree = "<group>"; };
+		FA25F39D1E7D853F00EB0D2F /* FitToFreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitToFreeViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA25F35C1E7D361500EB0D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA25F3751E7D361600EB0D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA25F3561E7D361500EB0D2F = {
+			isa = PBXGroup;
+			children = (
+				FA25F3611E7D361500EB0D2F /* BinButtonDemo */,
+				FA25F37B1E7D361600EB0D2F /* BinButtonDemoUITests */,
+				FA25F3601E7D361500EB0D2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA25F3601E7D361500EB0D2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA25F35F1E7D361500EB0D2F /* BinButtonDemo.app */,
+				FA25F3781E7D361600EB0D2F /* BinButtonDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA25F3611E7D361500EB0D2F /* BinButtonDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FA25F3931E7D7F7800EB0D2F /* BinButton */,
+				FA25F3651E7D361500EB0D2F /* AppDelegate.h */,
+				FA25F3661E7D361500EB0D2F /* AppDelegate.m */,
+				FA25F3681E7D361500EB0D2F /* ViewController.h */,
+				FA25F3691E7D361500EB0D2F /* ViewController.m */,
+				FA25F3991E7D852E00EB0D2F /* FreeToFitViewController.h */,
+				FA25F39A1E7D852E00EB0D2F /* FreeToFitViewController.m */,
+				FA25F39C1E7D853F00EB0D2F /* FitToFreeViewController.h */,
+				FA25F39D1E7D853F00EB0D2F /* FitToFreeViewController.m */,
+				FA25F36B1E7D361500EB0D2F /* Main.storyboard */,
+				FA25F36E1E7D361600EB0D2F /* Assets.xcassets */,
+				FA25F3701E7D361600EB0D2F /* LaunchScreen.storyboard */,
+				FA25F3731E7D361600EB0D2F /* Info.plist */,
+				FA25F3621E7D361500EB0D2F /* Supporting Files */,
+			);
+			path = BinButtonDemo;
+			sourceTree = "<group>";
+		};
+		FA25F3621E7D361500EB0D2F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA25F3631E7D361500EB0D2F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA25F37B1E7D361600EB0D2F /* BinButtonDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA25F37C1E7D361600EB0D2F /* BinButtonDemoUITests.m */,
+				FA25F37E1E7D361600EB0D2F /* Info.plist */,
+			);
+			path = BinButtonDemoUITests;
+			sourceTree = "<group>";
+		};
+		FA25F3931E7D7F7800EB0D2F /* BinButton */ = {
+			isa = PBXGroup;
+			children = (
+				FA25F3941E7D7F7800EB0D2F /* BinButton.h */,
+				FA25F3951E7D7F7800EB0D2F /* BinButton.m */,
+				FA25F3961E7D7F7800EB0D2F /* BinButtonDefaultImageName@2x.png */,
+			);
+			path = BinButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA25F35E1E7D361500EB0D2F /* BinButtonDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA25F3811E7D361600EB0D2F /* Build configuration list for PBXNativeTarget "BinButtonDemo" */;
+			buildPhases = (
+				FA25F35B1E7D361500EB0D2F /* Sources */,
+				FA25F35C1E7D361500EB0D2F /* Frameworks */,
+				FA25F35D1E7D361500EB0D2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinButtonDemo;
+			productName = BinButtonDemo;
+			productReference = FA25F35F1E7D361500EB0D2F /* BinButtonDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA25F3771E7D361600EB0D2F /* BinButtonDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA25F3841E7D361600EB0D2F /* Build configuration list for PBXNativeTarget "BinButtonDemoUITests" */;
+			buildPhases = (
+				FA25F3741E7D361600EB0D2F /* Sources */,
+				FA25F3751E7D361600EB0D2F /* Frameworks */,
+				FA25F3761E7D361600EB0D2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA25F37A1E7D361600EB0D2F /* PBXTargetDependency */,
+			);
+			name = BinButtonDemoUITests;
+			productName = BinButtonDemoUITests;
+			productReference = FA25F3781E7D361600EB0D2F /* BinButtonDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA25F3571E7D361500EB0D2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = jerryzhang;
+				TargetAttributes = {
+					FA25F35E1E7D361500EB0D2F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 96V8LU22SM;
+						ProvisioningStyle = Automatic;
+					};
+					FA25F3771E7D361600EB0D2F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 96V8LU22SM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FA25F35E1E7D361500EB0D2F;
+					};
+				};
+			};
+			buildConfigurationList = FA25F35A1E7D361500EB0D2F /* Build configuration list for PBXProject "BinButtonDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA25F3561E7D361500EB0D2F;
+			productRefGroup = FA25F3601E7D361500EB0D2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA25F35E1E7D361500EB0D2F /* BinButtonDemo */,
+				FA25F3771E7D361600EB0D2F /* BinButtonDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA25F35D1E7D361500EB0D2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA25F3721E7D361600EB0D2F /* LaunchScreen.storyboard in Resources */,
+				FA25F36F1E7D361600EB0D2F /* Assets.xcassets in Resources */,
+				FA25F3981E7D7F7800EB0D2F /* BinButtonDefaultImageName@2x.png in Resources */,
+				FA25F36D1E7D361500EB0D2F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA25F3761E7D361600EB0D2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA25F35B1E7D361500EB0D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA25F36A1E7D361500EB0D2F /* ViewController.m in Sources */,
+				FA25F39E1E7D853F00EB0D2F /* FitToFreeViewController.m in Sources */,
+				FA25F3671E7D361500EB0D2F /* AppDelegate.m in Sources */,
+				FA25F3641E7D361500EB0D2F /* main.m in Sources */,
+				FA25F3971E7D7F7800EB0D2F /* BinButton.m in Sources */,
+				FA25F39B1E7D852E00EB0D2F /* FreeToFitViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA25F3741E7D361600EB0D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA25F37D1E7D361600EB0D2F /* BinButtonDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA25F37A1E7D361600EB0D2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA25F35E1E7D361500EB0D2F /* BinButtonDemo */;
+			targetProxy = FA25F3791E7D361600EB0D2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA25F36B1E7D361500EB0D2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA25F36C1E7D361500EB0D2F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA25F3701E7D361600EB0D2F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA25F3711E7D361600EB0D2F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA25F37F1E7D361600EB0D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA25F3801E7D361600EB0D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA25F3821E7D361600EB0D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 96V8LU22SM;
+				INFOPLIST_FILE = BinButtonDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bin.enterprice.BinButtonDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA25F3831E7D361600EB0D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 96V8LU22SM;
+				INFOPLIST_FILE = BinButtonDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bin.enterprice.BinButtonDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA25F3851E7D361600EB0D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 96V8LU22SM;
+				INFOPLIST_FILE = BinButtonDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bin.enterprice.BinButtonDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BinButtonDemo;
+			};
+			name = Debug;
+		};
+		FA25F3861E7D361600EB0D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 96V8LU22SM;
+				INFOPLIST_FILE = BinButtonDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bin.enterprice.BinButtonDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BinButtonDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA25F35A1E7D361500EB0D2F /* Build configuration list for PBXProject "BinButtonDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA25F37F1E7D361600EB0D2F /* Debug */,
+				FA25F3801E7D361600EB0D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA25F3811E7D361600EB0D2F /* Build configuration list for PBXNativeTarget "BinButtonDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA25F3821E7D361600EB0D2F /* Debug */,
+				FA25F3831E7D361600EB0D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA25F3841E7D361600EB0D2F /* Build configuration list for PBXNativeTarget "BinButtonDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA25F3851E7D361600EB0D2F /* Debug */,
+				FA25F3861E7D361600EB0D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA25F3571E7D361500EB0D2F /* Project object */;
+}
