@@ -6,33 +6,31 @@
 //  Copyright (c) 2015年 jerryzhang. All rights reserved.
 //  Verson 1.0
 
-/**
- 1. 這套button裏面涵蓋了幾乎所有我們日常開發的UI,是一套很好的button框架,支持用戶繼承自定義UI,擴展性很好.
- 2. 本框架暫時不支持autolayout的環境,以後會加.
- */
-
 #import <UIKit/UIKit.h>
+
+// you can set is to 1, the content can have backgroundColor
+#define kBinButtonDebugMode 0
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
     BinButtonStyleNone = 0,
     
-    BinButtonStyleTitleCenter = 1,
+    BinButtonStyleTitleCenter,
     BinButtonStyleTitleLeft,
     BinButtonStyleTitleRight,
     
-    BinButtonStyleImageCenter = 5,
+    BinButtonStyleImageCenter,
     BinButtonStyleImageLeft,
     BinButtonStyleImageRight,
     
-    BinButtonStyleHorizontalImageCenterTitleCenter = 9,
+    BinButtonStyleHorizontalImageCenterTitleCenter,
     BinButtonStyleHorizontalImageLeftTitleCenter,
     BinButtonStyleHorizontalImageCenterTitleRight,
     
-    BinButtonStyleHorizontalReverseImageCenterTitleCenter = 13,
+    BinButtonStyleHorizontalReverseImageCenterTitleCenter,
     BinButtonStyleHorizontalReverseImageRightTitleCenter,
     BinButtonStyleHorizontalReverseImageCenterTitleLeft,
     
-    BinButtonStyleVerticalImageCenterTitleCenter = 17,
+    BinButtonStyleVerticalImageCenterTitleCenter,
     BinButtonStyleVerticalImageTopTitleCenter,
     BinButtonStyleVerticalImageCenterTitleBottom
 };
@@ -41,34 +39,60 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 
 @property (nonatomic, assign, readonly) BinButtonStyle buttonStyle;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleTopMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleBottomMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleLeftMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleRightMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageTopMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageBottomMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageLeftMargin;
 
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageRightMargin;
 
+/** Default is 10.f */
 @property (nonatomic, assign) CGFloat imageTitleMargin;
 
-/**
- 是否允許按鈕高亮
- */
+/** Weather button can be highlighted */
 @property (nonatomic, assign) BOOL isAllowHighlighted;
 
+/**
+ Initialize method
+
+ @param buttonStyle a style of BinButtonStyle
+ @param frame button frame
+ @return a instance of BinButton
+ */
 + (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle frame:(CGRect)frame;
 
+/**
+    The button width to fit according to content and properties at horizontal direction
+ */
 - (void)sizeToFitAtHorizontal;
+/**
+ The button width to free according to content and properties at horizontal direction
+ */
 - (void)sizeToFreeAtHorizontal;
+/**
+ The button height to fit according to content and properties at Vertical direction
+ */
 - (void)sizeToFitAtVertical;
+/**
+ The button height to free according to content and properties at Vertical direction
+ */
 - (void)sizeToFreeAtVertical;
 
 @end

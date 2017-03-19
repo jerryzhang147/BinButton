@@ -14,8 +14,8 @@
 
 #define kBinButtonDefaultTitle @"BinButton"
 #define kBinButtonDefaultImageName @"BinButtonDefaultImageName"
-#define kBinButtonDefaultHorizontalImageTitleMargin 10.f
-#define kBinButtonDefaultVerticalImageTitleMargin 5.f
+#define kBinButtonDefaultImageTitleMargin 10.f
+#define kBinButtonDefaultTitleColor [UIColor blackColor]
 
 @interface BinButton ()
 @property (nonatomic, assign) BinButtonStyle buttonStyle;
@@ -39,9 +39,9 @@
         btn.isAllowHighlighted = YES;
         btn.sizeNeedToFreeAtHorizontal = YES;
         btn.sizeNeedToFreeAtVertical = YES;
-        btn.imageTitleMargin = kBinButtonDefaultHorizontalImageTitleMargin;
+        btn.imageTitleMargin = kBinButtonDefaultImageTitleMargin;
         btn.style = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-#if DEBUG
+#if kBinButtonDebugMode
         btn.titleLabel.backgroundColor = [UIColor blueColor];
         btn.imageView.backgroundColor = [UIColor orangeColor];
 #endif
@@ -54,100 +54,35 @@
     
     switch (buttonStyle) {
         case BinButtonStyleTitleCenter:
-        {
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleTitleLeft:
-        {
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        case BinButtonStyleTitleRight: {
             [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
-        case BinButtonStyleTitleRight:
-        {
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
+            [self setTitleColor:kBinButtonDefaultTitleColor forState:UIControlStateNormal];
         }
             break;
         case BinButtonStyleImageCenter:
-        {
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleImageLeft:
-        {
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleImageRight:
-        {
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
             [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-        }
             break;
         case BinButtonStyleHorizontalImageCenterTitleCenter:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleHorizontalImageLeftTitleCenter:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleHorizontalImageCenterTitleRight:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleHorizontalReverseImageCenterTitleCenter:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleHorizontalReverseImageRightTitleCenter:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleHorizontalReverseImageCenterTitleLeft:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleVerticalImageCenterTitleCenter:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
         case BinButtonStyleVerticalImageTopTitleCenter:
-        {
+        case BinButtonStyleVerticalImageCenterTitleBottom: {
             [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
             [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-        }
-            break;
-        case BinButtonStyleVerticalImageCenterTitleBottom:
-        {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
+            [self setTitleColor:kBinButtonDefaultTitleColor forState:UIControlStateNormal];
         }
             break;
         default:
             break;
     }
 }
-
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
     CGRect imageRect = [super imageRectForContentRect:contentRect];
@@ -340,14 +275,12 @@
     return imageRect;
 }
 
-static NSMutableParagraphStyle *const style;
-
 - (CGRect)titleRectForContentRect:(CGRect)contentRect {
     // 在titleRectForContentRect里面去调用self.titleLabel会死循环
-    if (!self.titleFont) return [super titleRectForContentRect:contentRect];
+    if (!self.titleFont || ![self currentTitle]) return [super titleRectForContentRect:contentRect];
     
     self.style.lineBreakMode = self.lineBreakMode;
-    CGRect titleRect = [[self currentTitle] boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.titleFont, NSParagraphStyleAttributeName : style} context:nil];
+    CGRect titleRect = [[self currentTitle] boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.titleFont, NSParagraphStyleAttributeName : self.style} context:nil];
     
     CGFloat titleX = 0.f;
     CGFloat titleY = 0.f;
@@ -612,6 +545,70 @@ static NSMutableParagraphStyle *const style;
     }
 }
 
+#pragma mark - setter
+- (void)setTitleTopMargin:(CGFloat)titleTopMargin {
+    if (_titleTopMargin == titleTopMargin) return;
+    
+    _titleTopMargin = titleTopMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setTitleBottomMargin:(CGFloat)titleBottomMargin {
+    if (_titleBottomMargin == titleBottomMargin) return;
+    
+    _titleBottomMargin = titleBottomMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setTitleLeftMargin:(CGFloat)titleLeftMargin {
+    if (_titleLeftMargin == titleLeftMargin) return;
+    
+    _titleLeftMargin = titleLeftMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setTitleRightMargin:(CGFloat)titleRightMargin {
+    if (_titleRightMargin == titleRightMargin) return;
+    
+    _titleRightMargin = titleRightMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setImageTopMargin:(CGFloat)imageTopMargin {
+    if (_imageTopMargin == imageTopMargin) return;
+    
+    _imageTopMargin = imageTopMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setImageBottomMargin:(CGFloat)imageBottomMargin {
+    if (_imageBottomMargin == imageBottomMargin) return;
+    
+    _imageBottomMargin = imageBottomMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setImageLeftMargin:(CGFloat)imageLeftMargin {
+    if (_imageLeftMargin == imageLeftMargin) return;
+    
+    _imageLeftMargin = imageLeftMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setImageTitleMargin:(CGFloat)imageTitleMargin {
+    if (_imageTitleMargin == imageTitleMargin) return;
+    
+    _imageTitleMargin = imageTitleMargin;
+    [self setNeedsLayout];
+}
+
+- (void)setImageRightMargin:(CGFloat)imageRightMargin {
+    if (_imageRightMargin == imageRightMargin) return;
+    
+    _imageRightMargin = imageRightMargin;
+    [self setNeedsLayout];
+}
+
 - (void)setHighlighted:(BOOL)highlighted {
     if(self.isAllowHighlighted){
         [super setHighlighted:highlighted];
@@ -619,10 +616,14 @@ static NSMutableParagraphStyle *const style;
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-    [self setBackgroundImage:[self buttonImageWithColor:backgroundColor size:CGSizeMake(1.f, 1.f)] forState:UIControlStateNormal];
+    if ([self backgroundImageForState:UIControlStateNormal]) {
+        [super setBackgroundColor:backgroundColor];
+    } else {
+        [self setBackgroundImage:[self buttonImageWithColor:backgroundColor size:CGSizeMake(1.f, 1.f)] forState:UIControlStateNormal];
+    }
 }
 
-#pragma makr - control UI smoothly
+#pragma mark - control UI smoothly
 - (void)sizeToFitAtHorizontal {
     self.sizeNeedToFreeAtHorizontal = NO;
     self.sizeNeedToFitAtHorizontal = YES;

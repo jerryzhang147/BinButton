@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+// you can set is to 1, the content can have backgroundColor
+#define kBinButtonDebugMode 0
+
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
     BinButtonStyleNone = 0,
     
-    BinButtonStyleTitleCenter = 1,
+    BinButtonStyleTitleCenter,
     BinButtonStyleTitleLeft,
     BinButtonStyleTitleRight,
     
@@ -36,37 +39,38 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 
 @property (nonatomic, assign, readonly) BinButtonStyle buttonStyle;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleTopMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleBottomMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleLeftMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleRightMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageTopMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageBottomMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageLeftMargin;
 
-/** default is 0.f */
+/** Default is 0.f */
 @property (nonatomic, assign) CGFloat imageRightMargin;
 
-/** default is 10.f */
+/** Default is 10.f */
 @property (nonatomic, assign) CGFloat imageTitleMargin;
 
+/** Weather button can be highlighted */
 @property (nonatomic, assign) BOOL isAllowHighlighted;
 
 /**
- initialize method
+ Initialize method
 
  @param buttonStyle a style of BinButtonStyle
  @param frame button frame
@@ -75,19 +79,19 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 + (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle frame:(CGRect)frame;
 
 /**
-    The button width to fit according to content and settings at horizontal direction
+    The button width to fit according to content and properties at horizontal direction
  */
 - (void)sizeToFitAtHorizontal;
 /**
- The button width to free according to content and settings at horizontal direction
+ The button width to free according to content and properties at horizontal direction
  */
 - (void)sizeToFreeAtHorizontal;
 /**
- The button height to fit according to content and settings at Vertical direction
+ The button height to fit according to content and properties at Vertical direction
  */
 - (void)sizeToFitAtVertical;
 /**
- The button height to free according to content and settings at Vertical direction
+ The button height to free according to content and properties at Vertical direction
  */
 - (void)sizeToFreeAtVertical;
 
