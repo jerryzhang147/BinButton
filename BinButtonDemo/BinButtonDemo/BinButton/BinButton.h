@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-// you can set is to 1, the content can have backgroundColor
-#define kBinButtonDebugMode 0
+#define BinButtonDebugMode 1
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
     BinButtonStyleNone = 0,
@@ -66,7 +65,7 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 /** Default is 10.f */
 @property (nonatomic, assign) CGFloat imageTitleMargin;
 
-/** Weather button can be highlighted */
+/** Whether button can be highlighted */
 @property (nonatomic, assign) BOOL isAllowHighlighted;
 
 /**

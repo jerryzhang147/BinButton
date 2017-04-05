@@ -20,37 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrK-vB-gJM">
-                                <rect key="frame" x="127.5" y="260" width="120" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.33445010834109445" blue="0.53624265131323923" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="FitToFree"/>
-                                <connections>
-                                    <action selector="fitToFreeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpN-oj-8Vq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50C-Nc-rVf">
-                                <rect key="frame" x="127" y="120" width="120" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.36085140678128491" blue="0.47835825868261705" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="br9-NJ-sG3"/>
-                                    <constraint firstAttribute="height" constant="40" id="iQl-s8-zS6"/>
-                                </constraints>
-                                <state key="normal" title="FreeToFit"/>
-                                <connections>
-                                    <action selector="freeToFitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1wF-nq-suG"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="50C-Nc-rVf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="9Ok-Qh-YlF"/>
-                            <constraint firstItem="DrK-vB-gJM" firstAttribute="width" secondItem="50C-Nc-rVf" secondAttribute="width" id="Bv4-76-fZI"/>
-                            <constraint firstItem="DrK-vB-gJM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Del-oq-yha"/>
-                            <constraint firstItem="50C-Nc-rVf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i4F-KR-Gpr"/>
-                            <constraint firstItem="DrK-vB-gJM" firstAttribute="height" secondItem="50C-Nc-rVf" secondAttribute="height" id="ur7-c5-HkJ"/>
-                            <constraint firstItem="DrK-vB-gJM" firstAttribute="top" secondItem="50C-Nc-rVf" secondAttribute="bottom" constant="100" id="vLZ-GY-pwc"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

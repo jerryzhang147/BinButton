@@ -4,11 +4,6 @@
 //
 //  Created by jerryzhang on 15/9/27.
 //  Copyright (c) 2015年 jerryzhang. All rights reserved.
-//
-
-/*
- * 目前这个库是暂时写好了，一段时间内不需要维护了
- */
 
 #import "BinButton.h"
 
@@ -34,19 +29,31 @@
 + (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle frame:(CGRect)frame {
     BinButton *btn = [BinButton buttonWithType:UIButtonTypeCustom];
     if (btn) {
+        [btn commonInit];
+        
         btn.frame = frame;
         btn.buttonStyle = buttonStyle;
-        btn.isAllowHighlighted = YES;
-        btn.sizeNeedToFreeAtHorizontal = YES;
-        btn.sizeNeedToFreeAtVertical = YES;
-        btn.imageTitleMargin = kBinButtonDefaultImageTitleMargin;
-        btn.style = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-#if kBinButtonDebugMode
-        btn.titleLabel.backgroundColor = [UIColor blueColor];
-        btn.imageView.backgroundColor = [UIColor orangeColor];
-#endif
     }
     return btn;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self commonInit];
+}
+
+- (void)commonInit {
+    self.isAllowHighlighted = YES;
+    self.sizeNeedToFreeAtHorizontal = YES;
+    self.sizeNeedToFreeAtVertical = YES;
+    self.imageTitleMargin = kBinButtonDefaultImageTitleMargin;
+    self.style = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    
+#if BinButtonDebugMode
+    self.titleLabel.backgroundColor = [UIColor blueColor];
+    self.imageView.backgroundColor = [UIColor orangeColor];
+#endif
 }
 
 - (void)setButtonStyle:(BinButtonStyle)buttonStyle {
@@ -82,6 +89,8 @@
         default:
             break;
     }
+    
+    [self setNeedsLayout];
 }
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
