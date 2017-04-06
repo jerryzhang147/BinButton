@@ -11,7 +11,7 @@
 #define BinButtonDebugMode 1
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
-    BinButtonStyleNone = 0,
+    BinButtonStyleNone = 0, // is normal, the same as the UIButton
     
     BinButtonStyleTitleCenter,
     BinButtonStyleTitleLeft,
@@ -36,7 +36,8 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 
 @interface BinButton : UIButton
 
-@property (nonatomic, assign, readonly) BinButtonStyle buttonStyle;
+/** Default is BinButtonStyleNone */
+@property (nonatomic, assign) BinButtonStyle buttonStyle;
 
 /** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleTopMargin;
@@ -72,25 +73,24 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
  Initialize method
 
  @param buttonStyle a style of BinButtonStyle
- @param frame button frame
  @return a instance of BinButton
  */
-+ (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle frame:(CGRect)frame;
++ (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle;
 
 /**
     The button width to fit according to content and properties at horizontal direction
  */
 - (void)sizeToFitAtHorizontal;
 /**
- The button width to free according to content and properties at horizontal direction
+    The button width to free according to content and properties at horizontal direction
  */
 - (void)sizeToFreeAtHorizontal;
 /**
- The button height to fit according to content and properties at Vertical direction
+    The button height to fit according to content and properties at Vertical direction
  */
 - (void)sizeToFitAtVertical;
 /**
- The button height to free according to content and properties at Vertical direction
+    The button height to free according to content and properties at Vertical direction
  */
 - (void)sizeToFreeAtVertical;
 
