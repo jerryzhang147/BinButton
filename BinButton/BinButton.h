@@ -4,15 +4,15 @@
 //
 //  Created by jerryzhang on 15/9/27.
 //  Copyright (c) 2015年 jerryzhang. All rights reserved.
-//  Verson 1.0
+//  Verson 1.0.1
 
 #import <UIKit/UIKit.h>
 
-// you can set is to 1, the content can have backgroundColor
-#define kBinButtonDebugMode 0
+/// *** Pay attention:
+/// If you want to debug the BinButton's layout, you can add 'BinButtonDebugMode = 1' macro in the target's debug preprocessing macro
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
-    BinButtonStyleNone = 0,
+    BinButtonStyleNone = 0, // is normal, the same as the UIButton
     
     BinButtonStyleTitleCenter,
     BinButtonStyleTitleLeft,
@@ -37,7 +37,8 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 
 @interface BinButton : UIButton
 
-@property (nonatomic, assign, readonly) BinButtonStyle buttonStyle;
+/** Default is BinButtonStyleNone */
+@property (nonatomic, assign) BinButtonStyle buttonStyle;
 
 /** Default is 0.f */
 @property (nonatomic, assign) CGFloat titleTopMargin;
@@ -66,32 +67,31 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
 /** Default is 10.f */
 @property (nonatomic, assign) CGFloat imageTitleMargin;
 
-/** Weather button can be highlighted */
+/** Whether button can be highlighted */
 @property (nonatomic, assign) BOOL isAllowHighlighted;
 
 /**
  Initialize method
 
  @param buttonStyle a style of BinButtonStyle
- @param frame button frame
  @return a instance of BinButton
  */
-+ (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle frame:(CGRect)frame;
++ (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle;
 
 /**
     The button width to fit according to content and properties at horizontal direction
  */
 - (void)sizeToFitAtHorizontal;
 /**
- The button width to free according to content and properties at horizontal direction
+    The button width to free according to content and properties at horizontal direction
  */
 - (void)sizeToFreeAtHorizontal;
 /**
- The button height to fit according to content and properties at Vertical direction
+    The button height to fit according to content and properties at Vertical direction
  */
 - (void)sizeToFitAtVertical;
 /**
- The button height to free according to content and properties at Vertical direction
+    The button height to free according to content and properties at Vertical direction
  */
 - (void)sizeToFreeAtVertical;
 
