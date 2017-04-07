@@ -18,7 +18,6 @@
 @property (nonatomic, assign) NSLineBreakMode lineBreakMode;
 @property (nonatomic, strong) NSMutableParagraphStyle *style;
 @property (nonatomic, assign) CGRect contentBounds;
-@property (nonatomic, assign) BOOL awakeFromNibFirstTime;
 
 @property (nonatomic, assign) BOOL sizeNeedToFitAtHorizontal;
 @property (nonatomic, assign) BOOL sizeNeedToFitAtVertical;
