@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define BinButtonDebugMode 1
+#define BinButtonDebugMode 0
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
     BinButtonStyleNone = 0, // is normal, the same as the UIButton
