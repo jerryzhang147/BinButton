@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BinButton"
-  s.version      = "1.0.0"
-  s.summary      = "A button for iOS."
+  s.version      = "1.0.1"
+  s.summary      = "A button that can easily achieve kinds of layout for iOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-    BinButton can achieve the kinds of button layout, such as image left,title right,etc.
+    BinButton can easily achieve kinds of layout for iOS, such as image align left, image align top, title align left, title align right etc.
                    DESC
 
   s.homepage     = "https://github.com/jerryzhang147/binbutton"
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/jerryzhang147/BinButton.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/jerryzhang147/BinButton.git", :tag => "1.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
