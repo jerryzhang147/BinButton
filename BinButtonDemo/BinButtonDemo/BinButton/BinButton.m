@@ -13,11 +13,12 @@
 #define kBinButtonDefaultTitleColor [UIColor blackColor]
 
 @interface BinButton ()
-//@property (nonatomic, assign) BinButtonStyle buttonStyle;
+
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, assign) NSLineBreakMode lineBreakMode;
 @property (nonatomic, strong) NSMutableParagraphStyle *style;
 @property (nonatomic, assign) CGRect contentBounds;
+@property (nonatomic, assign) BOOL awakeFromNibFirstTime;
 
 @property (nonatomic, assign) BOOL sizeNeedToFitAtHorizontal;
 @property (nonatomic, assign) BOOL sizeNeedToFitAtVertical;
@@ -53,10 +54,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    self.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-    self.titleEdgeInsets = UIEdgeInsetsZero;
-    self.translatesAutoresizingMaskIntoConstraints = NO;
+
     [self commonInit];
 }
 
@@ -344,9 +342,8 @@
         }
         return CGRectMake(titleX, titleY, titleW, titleH);
     } else if (self.buttonStyle == BinButtonStyleTitleRight) {
-        CGFloat titleX = self.contentBounds.size.width - self.contentBounds.size.width - self.titleRightMargin;
         if (self.sizeNeedToFreeAtHorizontal) {
-            titleX = self.contentBounds.size.width - self.contentBounds.size.width - self.titleRightMargin;
+            titleX = self.contentBounds.size.width - titleRect.size.width - self.titleRightMargin;
         }
         if (self.sizeNeedToFreeAtVertical) {
             titleY = (self.contentBounds.size.height - titleH) * 0.5f;
@@ -506,11 +503,11 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self updateFrame];
+    [self updateConfigurations];
 }
 
-#pragma mark - update frame
-- (void)updateFrame {
+#pragma mark - update configurations
+- (void)updateConfigurations {
     
     CGRect tempButtonRect = self.frame;
     CGRect tempTitleLabelRect = self.titleLabel.frame;
@@ -518,6 +515,9 @@
     
     // 为了节约一点性能，这里直接返回
     if (CGRectEqualToRect(CGRectZero, tempButtonRect) || (CGRectEqualToRect(CGRectZero, tempTitleLabelRect) && CGRectEqualToRect(CGRectZero, tempImageViewRect))) return;
+    
+    // 修复Button点击的高亮效果
+    [self setBackgroundColor:self.backgroundColor];
     
 //    if (self.buttonStyle != BinButtonStyleVerticalImageCenterTitleCenter && self.buttonStyle != BinButtonStyleVerticalImageTopTitleCenter && self.buttonStyle != BinButtonStyleVerticalImageCenterTitleBottom) {
 //        NSAssert(tempButtonRect.size.width >= tempTitleLabelRect.size.width + tempImageViewRect.size.width, @"the width of content is beyond the width of button");
@@ -577,7 +577,7 @@
     }
 }
 
-#pragma mark - setter
+#pragma mark - custom setter
 - (void)setTitleTopMargin:(CGFloat)titleTopMargin {
     if (_titleTopMargin == titleTopMargin) return;
     
@@ -641,6 +641,7 @@
     [self setNeedsLayout];
 }
 
+#pragma mark - system setter
 - (void)setHighlighted:(BOOL)highlighted {
     if(self.isAllowHighlighted){
         [super setHighlighted:highlighted];
@@ -648,14 +649,16 @@
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-//    if ([self backgroundImageForState:UIControlStateNormal]) {
-//        [super setBackgroundColor:backgroundColor];
-//    } else if (CGRectGetWidth(self.frame) && CGRectGetHeight(self.frame)) {
-//        [self setBackgroundImage:[self buttonImageWithColor:backgroundColor size:CGSizeMake(1.f, 1.f)] forState:UIControlStateNormal];
-//    }
-//    else {
+    // self.superview作为判断条件的原因是因为在使用xib唤醒的时候，如果不调用 [super setBackgroundColor:backgroundColor]; 那么xib中设置的背景色就没有作用了，且从xib中唤醒的时候，这个方法会先于 awakeFromNib 方法被调用
+    if (self.superview && self.isAllowHighlighted) {
+        if ([self backgroundImageForState:UIControlStateNormal]) {
+            [super setBackgroundColor:backgroundColor];
+        } else {
+            [self setBackgroundImage:[self buttonImageWithColor:backgroundColor size:CGSizeMake(1.f, 1.f)] forState:UIControlStateNormal];
+        }
+    } else {
         [super setBackgroundColor:backgroundColor];
-//    }
+    }
 }
 
 #pragma mark - control UI smoothly

@@ -21,6 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrl-sf-cuM" userLabel="button1" customClass="BinButton">
+                    <rect key="frame" x="97.5" y="303.5" width="180" height="60"/>
+                    <color key="backgroundColor" red="0.81482291669999996" green="0.37112280339999998" blue="0.4305710572" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Tn2-j8-OH3"/>
+                        <constraint firstAttribute="width" constant="180" id="kYk-gg-VIK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubi-SG-jM4" userLabel="goback">
                     <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,17 +41,8 @@
                         <action selector="goBack:" destination="-1" eventType="touchUpInside" id="Bvc-3P-2Ic"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrl-sf-cuM" userLabel="button1" customClass="BinButton">
-                    <rect key="frame" x="97.5" y="303.5" width="180" height="60"/>
-                    <color key="backgroundColor" red="0.81482291669999996" green="0.37112280339999998" blue="0.4305710572" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Tn2-j8-OH3"/>
-                        <constraint firstAttribute="width" constant="180" id="kYk-gg-VIK"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
             </subviews>
-            <color key="backgroundColor" red="0.40747949259999999" green="1" blue="0.33865732389999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="mrl-sf-cuM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BFq-MU-uIQ"/>
                 <constraint firstItem="ubi-SG-jM4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F0h-oR-0Vr"/>
@@ -50,7 +50,7 @@
                 <constraint firstAttribute="bottom" secondItem="ubi-SG-jM4" secondAttribute="bottom" id="vYm-bo-5I1"/>
                 <constraint firstAttribute="trailing" secondItem="ubi-SG-jM4" secondAttribute="trailing" id="zmp-oz-hud"/>
             </constraints>
-            <point key="canvasLocation" x="-240" y="-147"/>
+            <point key="canvasLocation" x="-1067" y="-329"/>
         </view>
     </objects>
 </document>

@@ -17,12 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.b1.buttonStyle = BinButtonStyleTitleRight;
+    self.b1.titleRightMargin = 10.f;
 }
 
 - (IBAction)goBack:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 /*
 #pragma mark - Navigation

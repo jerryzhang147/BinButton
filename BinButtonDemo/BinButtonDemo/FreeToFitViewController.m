@@ -22,7 +22,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    BinButton *b1 = [BinButton buttonWithStyle:BinButtonStyleHorizontalImageLeftTitleCenter frame:CGRectMake(0, 0, 240, 40)];
+    BinButton *b1 = [BinButton buttonWithStyle:BinButtonStyleHorizontalImageLeftTitleCenter];
+    b1.frame = CGRectMake(0, 0, 240, 40);
     b1.imageLeftMargin = 10.f;
     b1.backgroundColor = [UIColor greenColor];
     b1.center = CGPointMake(self.view.center.x, 50.f);
@@ -30,14 +31,16 @@
     [self.view addSubview:b1];
     self.b1 = b1;
     
-    BinButton *b2 = [BinButton buttonWithStyle:BinButtonStyleHorizontalReverseImageCenterTitleCenter frame:CGRectMake(0, 0, 240, 40)];
+    BinButton *b2 = [BinButton buttonWithStyle:BinButtonStyleHorizontalReverseImageCenterTitleCenter];
     b2.backgroundColor = [UIColor greenColor];
+    b2.frame = CGRectMake(0, 0, 240, 40);
     b2.center = CGPointMake(self.view.center.x, 100.f);
     [b2 addTarget:self action:@selector(btn) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b2];
     self.b2 = b2;
     
-    BinButton *b3 = [BinButton buttonWithStyle:BinButtonStyleVerticalImageTopTitleCenter frame:CGRectMake(0, 0, 240, 100.f)];
+    BinButton *b3 = [BinButton buttonWithStyle:BinButtonStyleVerticalImageTopTitleCenter];
+    b3.frame = CGRectMake(0, 0, 240, 100.f);
     b3.backgroundColor = [UIColor greenColor];
     b3.imageTopMargin = 10.f;
     b3.imageTitleMargin = 20.f;
