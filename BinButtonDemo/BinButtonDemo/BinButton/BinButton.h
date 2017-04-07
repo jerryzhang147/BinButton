@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define BinButtonDebugMode 0
+/// *** Pay attention:
+/// If you want to debug the BinButton's layout, you can add 'BinButtonDebugMode = 1' macro in the target's debug preprocessing macro
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
     BinButtonStyleNone = 0, // is normal, the same as the UIButton

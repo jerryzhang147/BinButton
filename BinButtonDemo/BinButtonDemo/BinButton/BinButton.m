@@ -66,6 +66,9 @@
     self.imageTitleMargin = kBinButtonDefaultImageTitleMargin;
     self.style = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     
+/// *** Pay attention:
+/// If you want to debug the BinButton's layout, you can add 'BinButtonDebugMode = 1' macro in the target's debug preprocessing macro
+    
 #if BinButtonDebugMode
     self.titleLabel.backgroundColor = [UIColor blueColor];
     self.imageView.backgroundColor = [UIColor orangeColor];
