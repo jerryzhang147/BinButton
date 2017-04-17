@@ -7,10 +7,9 @@
 
 #import "BinButton.h"
 
-#define kBinButtonDefaultTitle @"BinButton"
-#define kBinButtonDefaultImageName @"BinButtonDefaultImageName"
-#define kBinButtonDefaultImageTitleMargin 10.f
-#define kBinButtonDefaultTitleColor [UIColor blackColor]
+NSString * const kBinButtonDefaultTitle = @"BinButton";
+NSString * const kBinButtonDefaultImageName = @"BinButtonDefaultImageName";
+CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 
 @interface BinButton ()
 
@@ -81,14 +80,21 @@
         case BinButtonStyleTitleCenter:
         case BinButtonStyleTitleLeft:
         case BinButtonStyleTitleRight: {
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-            [self setTitleColor:kBinButtonDefaultTitleColor forState:UIControlStateNormal];
+            if (![self titleForState:UIControlStateNormal]) {
+                [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
+            }
+            if (![self titleColorForState:UIControlStateNormal]) {
+                [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            }
         }
             break;
         case BinButtonStyleImageCenter:
         case BinButtonStyleImageLeft:
-        case BinButtonStyleImageRight:
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
+        case BinButtonStyleImageRight:{
+            if (![self imageForState:UIControlStateNormal]) {
+                [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
+            }
+        }
             break;
         case BinButtonStyleHorizontalImageCenterTitleCenter:
         case BinButtonStyleHorizontalImageLeftTitleCenter:
@@ -99,9 +105,15 @@
         case BinButtonStyleVerticalImageCenterTitleCenter:
         case BinButtonStyleVerticalImageTopTitleCenter:
         case BinButtonStyleVerticalImageCenterTitleBottom: {
-            [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
-            [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
-            [self setTitleColor:kBinButtonDefaultTitleColor forState:UIControlStateNormal];
+            if (![self imageForState:UIControlStateNormal]) {
+                [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
+            }
+            if (![self titleForState:UIControlStateNormal]) {
+                [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
+            }
+            if (![self titleColorForState:UIControlStateNormal]) {
+                [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            }
         }
             break;
         default:
