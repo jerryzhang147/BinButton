@@ -36,10 +36,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 }
 
 + (instancetype)buttonWithType:(UIButtonType)buttonType {
-    BinButton *btn = [super buttonWithType:buttonType];
-    if (btn) {
-        [btn commonInit];
-    }
+    BinButton *btn = [[BinButton alloc]initWithFrame:CGRectZero];
     return btn;
 }
 
