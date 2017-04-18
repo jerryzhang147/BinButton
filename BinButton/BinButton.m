@@ -103,7 +103,10 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
         case BinButtonStyleVerticalImageTopTitleCenter:
         case BinButtonStyleVerticalImageCenterTitleBottom: {
             if (![self imageForState:UIControlStateNormal]) {
-                [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
+//                NSString *resourcesPath = [[NSBundle mainBundle] pathForResource:@"BinButtonResources.bundle" ofType:nil];
+//                NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesPath];
+                UIImage *image = [UIImage imageNamed:@"BinButtonResources.bundle/BinButtonDefaultImageName"];
+                [self setImage:image forState:UIControlStateNormal];
             }
             if (![self titleForState:UIControlStateNormal]) {
                 [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
