@@ -89,7 +89,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
         case BinButtonStyleImageLeft:
         case BinButtonStyleImageRight:{
             if (![self imageForState:UIControlStateNormal]) {
-                [self setImage:[UIImage imageNamed:kBinButtonDefaultImageName] forState:UIControlStateNormal];
+                [self setImage:[BinButton bundleImageWithImageName:@"BinButtonDefaultImageName@2x.png"] forState:UIControlStateNormal];
             }
         }
             break;
@@ -103,10 +103,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
         case BinButtonStyleVerticalImageTopTitleCenter:
         case BinButtonStyleVerticalImageCenterTitleBottom: {
             if (![self imageForState:UIControlStateNormal]) {
-//                NSString *resourcesPath = [[NSBundle mainBundle] pathForResource:@"BinButtonResources.bundle" ofType:nil];
-//                NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesPath];
-                UIImage *image = [UIImage imageNamed:@"BinButtonResources.bundle/BinButtonDefaultImageName"];
-                [self setImage:image forState:UIControlStateNormal];
+                [self setImage:[BinButton bundleImageWithImageName:@"BinButtonDefaultImageName@2x.png"] forState:UIControlStateNormal];
             }
             if (![self titleForState:UIControlStateNormal]) {
                 [self setTitle:kBinButtonDefaultTitle forState:UIControlStateNormal];
@@ -705,6 +702,14 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 }
 
 #pragma mark - helper method
+
++ (UIImage *)bundleImageWithImageName:(NSString *)imageName {
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:@"BinButtonResources.bundle" ofType:nil];
+    imagePath = [imagePath stringByAppendingPathComponent:imageName];
+    return [UIImage imageWithContentsOfFile:imagePath];
+}
+
 - (UIImage *)buttonImageWithColor:(UIColor *)color size:(CGSize)size {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
