@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "BinButton/BinButtonResources.bundle/*.png"
+  s.resources = "BinButton/**/*.bundle"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
