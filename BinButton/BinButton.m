@@ -28,7 +28,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 @implementation BinButton
 
 + (instancetype)buttonWithStyle:(BinButtonStyle)buttonStyle {
-    BinButton *btn = [BinButton buttonWithType:UIButtonTypeCustom];
+    BinButton *btn = [[BinButton alloc]initWithFrame:CGRectZero];
     if (btn) {
         btn.buttonStyle = buttonStyle;
     }
