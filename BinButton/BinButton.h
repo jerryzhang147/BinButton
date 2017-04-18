@@ -76,7 +76,7 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
  @param buttonStyle a style of BinButtonStyle
  @return a instance of BinButton
  */
-- (instancetype)initWithButtonStyle:(BinButtonStyle)buttonStyle;
+- (instancetype)initWithFrame:(CGRect)frame buttonStyle:(BinButtonStyle)buttonStyle;
 
 /**
     The button width to fit according to content and properties at horizontal direction
