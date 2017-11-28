@@ -22,8 +22,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
     BinButton *b1 = [BinButton buttonWithButtonStyle:BinButtonStyleHorizontalImageLeftTitleCenter];
     b1.frame = CGRectMake(0, 0, 240, 40);
     b1.imageLeftMargin = 10.f;
@@ -82,14 +80,14 @@
     goBackButton.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50.f, [UIScreen mainScreen].bounds.size.width, 50);
     [goBackButton setTitle:@"Go Back" forState:UIControlStateNormal];
     goBackButton.backgroundColor = [UIColor redColor];
-    [goBackButton addTarget:self action:@selector(GoBack) forControlEvents:UIControlEventTouchUpInside];
+    [goBackButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:goBackButton];
 }
 
 - (void)btn {
 }
 
-- (void)GoBack {
+- (void)goBack {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -133,13 +131,6 @@
     self.b3.frame = tempRect;
     [self.b3 sizeToFreeAtVertical];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 @end

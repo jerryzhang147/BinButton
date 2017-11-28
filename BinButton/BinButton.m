@@ -121,7 +121,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
     CGRect imageRect = [super imageRectForContentRect:contentRect];
     
-    //  imageRectForContentRect方法比titleRectForContentRect方法先调用，所以这里拿到相关titleLabel的属性
+    //  imageRectForContentRect方法比titleRectForContentRect方法先调用，所以就在这里拿到相关titleLabel的属性
     self.titleFont = self.titleLabel.font;
     self.lineBreakMode = self.titleLabel.lineBreakMode;
     
@@ -395,7 +395,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
             titleY = self.titleTopMargin;
         }
         return CGRectMake(titleX, titleY, titleW, titleH);
-    }else if(self.buttonStyle == BinButtonStyleHorizontalImageCenterTitleRight){
+    } else if(self.buttonStyle == BinButtonStyleHorizontalImageCenterTitleRight){
         CGRect imageRect = [super imageRectForContentRect:contentRect];
         if (self.sizeNeedToFreeAtHorizontal) {
             titleX = (self.contentBounds.size.width - titleRect.size.width - self.titleRightMargin);
@@ -517,7 +517,6 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 
 #pragma mark - update configurations
 - (void)updateConfigurations {
-    
     CGRect tempButtonRect = self.frame;
     CGRect tempTitleLabelRect = self.titleLabel.frame;
     CGRect tempImageViewRect = self.imageView.frame;
@@ -565,7 +564,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
             tempButtonRect.size.height = MAX(self.imageTopMargin + tempImageViewRect.size.height + self.imageBottomMargin, self.titleTopMargin + tempTitleLabelRect.size.height + self.titleBottomMargin);
             self.frame = tempButtonRect;
         }
-    } else if (self.buttonStyle == BinButtonStyleHorizontalReverseImageCenterTitleCenter || self.buttonStyle == BinButtonStyleHorizontalReverseImageRightTitleCenter || self.buttonStyle ==BinButtonStyleHorizontalReverseImageCenterTitleLeft) {
+    } else if (self.buttonStyle == BinButtonStyleHorizontalReverseImageCenterTitleCenter || self.buttonStyle == BinButtonStyleHorizontalReverseImageRightTitleCenter || self.buttonStyle == BinButtonStyleHorizontalReverseImageCenterTitleLeft) {
         if (self.sizeNeedToFitAtHorizontal) {
             tempButtonRect.size.width = self.titleLeftMargin + tempTitleLabelRect.size.width + self.imageTitleMargin + tempImageViewRect.size.width + self.imageRightMargin;
             self.frame = tempButtonRect;
@@ -652,7 +651,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 
 #pragma mark - system setter
 - (void)setHighlighted:(BOOL)highlighted {
-    if(self.isAllowHighlighted){
+    if (self.isAllowHighlighted) {
         [super setHighlighted:highlighted];
     }
 }
@@ -702,6 +701,7 @@ CGFloat const kBinButtonDefaultImageTitleMargin = 10.f;
 #pragma mark - helper method
 
 + (UIImage *)bundleImageWithImageName:(NSString *)imageName {
+    /// 返回当前类的.h 和 .m文件所在的文件夹下的 bundle包对象
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *imagePath = [bundle pathForResource:@"BinButtonResources.bundle" ofType:nil];
     imagePath = [imagePath stringByAppendingPathComponent:imageName];

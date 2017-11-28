@@ -12,7 +12,7 @@
 /// If you want to debug the BinButton's layout, you can add 'BinButtonDebugMode = 1' macro in the target's debug preprocessing macro
 
 typedef NS_ENUM(NSUInteger, BinButtonStyle) {
-    BinButtonStyleNone = 0, // is normal, the same as the UIButton
+    BinButtonStyleNone = 0, // is normal, the same as the system
     
     BinButtonStyleTitleCenter,
     BinButtonStyleTitleLeft,
@@ -76,7 +76,9 @@ typedef NS_ENUM(NSUInteger, BinButtonStyle) {
  @param buttonStyle a style of BinButtonStyle
  @return a instance of BinButton
  */
+
 + (instancetype)buttonWithButtonStyle:(BinButtonStyle)buttonStyle;
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
     The button width to fit according to content and properties at horizontal direction

@@ -11,6 +11,7 @@
 #import "FitToFreeViewController.h"
 
 #import "UsedInXibViewController.h"
+#import "OtherViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -32,7 +33,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -43,6 +44,8 @@
         cell.textLabel.text = @"FitToFree";
     } else if (indexPath.row == 2) {
         cell.textLabel.text = @"UsedInXib";
+    } else if (indexPath.row == 3) {
+        cell.textLabel.text = @"Other";
     }
     return cell;
 }
@@ -54,6 +57,8 @@
         [self presentViewController:[FitToFreeViewController new] animated:YES completion:nil];
     } else if (indexPath.row == 2) {
         [self presentViewController:[UsedInXibViewController new] animated:YES completion:nil];
+    } else if (indexPath.row == 3) {
+        [self presentViewController:[OtherViewController new] animated:YES completion:nil];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

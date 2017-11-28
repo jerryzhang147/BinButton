@@ -75,15 +75,14 @@
     goBackButton.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50.f, [UIScreen mainScreen].bounds.size.width, 50);
     [goBackButton setTitle:@"Go Back" forState:UIControlStateNormal];
     goBackButton.backgroundColor = [UIColor redColor];
-    [goBackButton addTarget:self action:@selector(GoBack) forControlEvents:UIControlEventTouchUpInside];
+    [goBackButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:goBackButton];
 }
 
 - (void)btn {
-    
 }
 
-- (void)GoBack {
+- (void)goBack {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -99,11 +98,5 @@
     [self.b2 sizeToFitAtVertical];
     [self.b3 sizeToFitAtVertical];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
